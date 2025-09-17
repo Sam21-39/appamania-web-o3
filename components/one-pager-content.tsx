@@ -65,8 +65,9 @@ const services = [
 const pricingPlans = [
   {
     name: "Starter",
-    price: "₹50,000",
-    originalPrice: "₹75,000",
+    price: "₹49,999",
+    originalPrice: "₹74,999",
+    offer: "Free UI kit (₹9,999 value)",
     description: "Perfect for simple apps and MVPs",
     timeline: "4-6 weeks",
     features: [
@@ -89,8 +90,9 @@ const pricingPlans = [
   },
   {
     name: "Professional",
-    price: "₹1,50,000",
-    originalPrice: "₹2,00,000",
+    price: "₹1,49,999",
+    originalPrice: "₹1,99,999",
+    offer: "10% off + Free ASO setup",
     description: "Ideal for business applications",
     timeline: "8-12 weeks",
     features: [
@@ -118,8 +120,9 @@ const pricingPlans = [
   },
   {
     name: "Enterprise",
-    price: "₹3,00,000+",
-    originalPrice: "₹4,50,000+",
+    price: "₹2,99,999+",
+    originalPrice: "₹4,49,999+",
+    offer: "Complimentary onboarding workshop",
     description: "For complex, scalable solutions",
     timeline: "12-20 weeks",
     features: [
@@ -656,6 +659,11 @@ export function OnePagerContent() {
                         <span className="text-lg text-muted-foreground line-through">{plan.originalPrice}</span>
                       )}
                     </div>
+                    {plan.offer && (
+                      <div className="text-xs font-medium text-accent bg-accent/10 inline-block px-2 py-1 rounded-md">
+                        {plan.offer}
+                      </div>
+                    )}
                     <Badge variant="secondary" className="flex items-center gap-1">
                       <Clock className="h-3 w-3" />
                       {plan.timeline}
