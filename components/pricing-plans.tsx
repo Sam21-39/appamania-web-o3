@@ -8,9 +8,10 @@ const plans = [
   {
     name: "Starter",
     description: "Perfect for MVPs and simple apps",
-    price: "$15,000",
+    price: "$14,999",
     duration: "6-8 weeks",
     popular: false,
+    offer: "Launch offer: Free design sprint (worth $1,999)",
     features: [
       "Single platform (iOS or Android)",
       "Basic UI/UX design",
@@ -26,9 +27,10 @@ const plans = [
   {
     name: "Professional",
     description: "Most popular for business apps",
-    price: "$35,000",
+    price: "$34,999",
     duration: "10-14 weeks",
     popular: true,
+    offer: "10% off + Free ASO setup",
     features: [
       "Cross-platform (iOS & Android)",
       "Custom UI/UX design",
@@ -46,9 +48,10 @@ const plans = [
   {
     name: "Enterprise",
     description: "For complex, large-scale applications",
-    price: "$75,000+",
+    price: "$74,999+",
     duration: "16+ weeks",
     popular: false,
+    offer: "Complimentary onboarding workshop",
     features: [
       "Everything in Professional",
       "Advanced security features",
@@ -100,6 +103,11 @@ export function PricingPlans() {
                 <CardDescription className="text-muted-foreground mb-4">{plan.description}</CardDescription>
                 <div className="space-y-2">
                   <div className="text-4xl font-black text-primary">{plan.price}</div>
+                  {plan.offer && (
+                    <div className="text-xs font-medium text-accent bg-accent/10 inline-block px-2 py-1 rounded-md">
+                      {plan.offer}
+                    </div>
+                  )}
                   <div className="text-sm text-muted-foreground">Timeline: {plan.duration}</div>
                 </div>
               </CardHeader>
