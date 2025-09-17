@@ -1,0 +1,149 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Cosmic Night theme as primary - deep space colors with cosmic accents */
+  --background: oklch(0.12 0.03 280.0); /* Deep cosmic black */
+  --foreground: oklch(0.95 0.02 285.0); /* Bright starlight white */
+  --card: oklch(0.18 0.04 282.0); /* Dark cosmic card */
+  --card-foreground: oklch(0.92 0.025 285.0); /* Bright card text */
+  --popover: oklch(0.18 0.04 282.0); /* Dark cosmic popover */
+  --popover-foreground: oklch(0.92 0.025 285.0); /* Bright popover text */
+  --primary: oklch(0.65 0.2 290.0); /* Cosmic cyan - nebula blue */
+  --primary-foreground: oklch(0.12 0.03 280.0); /* Deep space text */
+  --secondary: oklch(0.75 0.18 320.0); /* Cosmic purple - galaxy purple */
+  --secondary-foreground: oklch(0.12 0.03 280.0); /* Deep space text */
+  --muted: oklch(0.25 0.05 282.0); /* Muted cosmic gray */
+  --muted-foreground: oklch(0.7 0.04 285.0); /* Muted starlight */
+  --accent: oklch(0.8 0.15 60.0); /* Cosmic gold - star yellow */
+  --accent-foreground: oklch(0.12 0.03 280.0); /* Deep space text */
+  --destructive: oklch(0.65 0.22 15.0); /* Cosmic red - supernova red */
+  --destructive-foreground: oklch(0.95 0.02 285.0); /* Bright text */
+  --border: oklch(0.3 0.06 282.0); /* Cosmic border */
+  --input: oklch(0.22 0.045 282.0); /* Dark cosmic input */
+  --ring: oklch(0.65 0.2 290.0); /* Cosmic cyan ring */
+  --chart-1: oklch(0.65 0.2 290.0); /* Cosmic cyan */
+  --chart-2: oklch(0.75 0.18 320.0); /* Cosmic purple */
+  --chart-3: oklch(0.8 0.15 60.0); /* Cosmic gold */
+  --chart-4: oklch(0.6 0.12 200.0); /* Cosmic blue */
+  --chart-5: oklch(0.7 0.16 340.0); /* Cosmic magenta */
+  --radius: 0.5rem;
+  --sidebar: oklch(0.16 0.035 282.0); /* Dark cosmic sidebar */
+  --sidebar-foreground: oklch(0.92 0.025 285.0); /* Bright sidebar text */
+  --sidebar-primary: oklch(0.65 0.2 290.0); /* Cosmic cyan primary */
+  --sidebar-primary-foreground: oklch(0.12 0.03 280.0); /* Deep space text */
+  --sidebar-accent: oklch(0.35 0.07 282.0); /* Dark cosmic accent */
+  --sidebar-accent-foreground: oklch(0.92 0.025 285.0); /* Bright accent text */
+  --sidebar-border: oklch(0.3 0.06 282.0); /* Cosmic border */
+  --sidebar-ring: oklch(0.65 0.2 290.0); /* Cosmic cyan ring */
+}
+
+.light {
+  /* Light mode as secondary option - clean and minimal */
+  --background: oklch(0.98 0.005 285.0); /* Clean white with slight cosmic tint */
+  --foreground: oklch(0.2 0.03 280.0); /* Dark cosmic text */
+  --card: oklch(0.99 0.003 285.0); /* Pure white card */
+  --card-foreground: oklch(0.2 0.03 280.0); /* Dark card text */
+  --popover: oklch(0.99 0.003 285.0); /* Pure white popover */
+  --popover-foreground: oklch(0.2 0.03 280.0); /* Dark popover text */
+  --primary: oklch(0.55 0.18 290.0); /* Cosmic cyan for light mode */
+  --primary-foreground: oklch(0.98 0.005 285.0); /* Light text */
+  --secondary: oklch(0.65 0.16 320.0); /* Cosmic purple for light mode */
+  --secondary-foreground: oklch(0.98 0.005 285.0); /* Light text */
+  --muted: oklch(0.94 0.01 285.0); /* Light muted */
+  --muted-foreground: oklch(0.4 0.04 280.0); /* Dark muted text */
+  --accent: oklch(0.7 0.13 60.0); /* Cosmic gold for light mode */
+  --accent-foreground: oklch(0.2 0.03 280.0); /* Dark text */
+  --destructive: oklch(0.6 0.2 15.0); /* Cosmic red for light mode */
+  --destructive-foreground: oklch(0.98 0.005 285.0); /* Light text */
+  --border: oklch(0.85 0.02 285.0); /* Light border */
+  --input: oklch(0.96 0.008 285.0); /* Light input */
+  --ring: oklch(0.55 0.18 290.0); /* Cosmic cyan ring */
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.dark {
+  --background: oklch(0.1743 0.0227 283.7998);
+  --foreground: oklch(0.9185 0.0257 285.8834);
+  --card: oklch(0.2284 0.0384 282.9324);
+  --card-foreground: oklch(0.9185 0.0257 285.8834);
+  --popover: oklch(0.2284 0.0384 282.9324);
+  --popover-foreground: oklch(0.9185 0.0257 285.8834);
+  --primary: oklch(0.7162 0.1597 290.3962);
+  --primary-foreground: oklch(0.1743 0.0227 283.7998);
+  --secondary: oklch(0.3139 0.0736 283.4591);
+  --secondary-foreground: oklch(0.8367 0.0849 285.9111);
+  --muted: oklch(0.271 0.0621 281.4377);
+  --muted-foreground: oklch(0.7166 0.0462 285.1741);
+  --accent: oklch(0.3354 0.0828 280.9705);
+  --accent-foreground: oklch(0.9185 0.0257 285.8834);
+  --destructive: oklch(0.6861 0.2061 14.9941);
+  --destructive-foreground: oklch(1.0 0 0);
+  --border: oklch(0.3261 0.0597 282.5832);
+  --input: oklch(0.3261 0.0597 282.5832);
+  --ring: oklch(0.7162 0.1597 290.3962);
+  --chart-1: oklch(0.7162 0.1597 290.3962);
+  --chart-2: oklch(0.6382 0.1047 274.9117);
+  --chart-3: oklch(0.7482 0.1235 244.7492);
+  --chart-4: oklch(0.7124 0.0977 186.6761);
+  --chart-5: oklch(0.7546 0.1831 346.8124);
+  --sidebar: oklch(0.2284 0.0384 282.9324);
+  --sidebar-foreground: oklch(0.9185 0.0257 285.8834);
+  --sidebar-primary: oklch(0.7162 0.1597 290.3962);
+  --sidebar-primary-foreground: oklch(0.1743 0.0227 283.7998);
+  --sidebar-accent: oklch(0.3354 0.0828 280.9705);
+  --sidebar-accent-foreground: oklch(0.9185 0.0257 285.8834);
+  --sidebar-border: oklch(0.3261 0.0597 282.5832);
+  --sidebar-ring: oklch(0.7162 0.1597 290.3962);
+}
